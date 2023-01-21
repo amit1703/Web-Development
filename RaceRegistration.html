@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Race Register</title>
+  </head>
+  <body>
+    <h1>Race Registration</h1>
+    <form action="/race">
+      <div>
+        <label for="name">First name</label>
+        <input
+          type="text"
+          placeholder="name"
+          id="name"
+          name="firstname"
+          required
+        />
+        <label for="Last">Last name</label>
+        <input
+          type="text"
+          placeholder="Last Name"
+          id="Last"
+          required
+          name="lastname"
+        />
+      </div>
+      <p>Select a Race:</p>
+      <div>
+        <input type="radio" name="Marathon" id="5k" value="5k" />
+        <label for="5k">Fun Run 5k</label><br />
+        <input
+          type="radio"
+          name="Marathon"
+          id="half Marathon"
+          value="half Marathon"
+        />
+        <label for="half Marathon">Half Marathon</label>
+        <br />
+        <input
+          type="radio"
+          name="Marathon"
+          id="Full Marathon"
+          value="Full Marathon"
+        />
+        <label for="Full Marathon">Full Marathon</label>
+        <br />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          placeholder="Email"
+          id="email"
+          name="email"
+          required
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          name="password"
+          required
+        />
+      </div>
+      <div>
+        <label for="race">Select age Group</label>
+        <select name="race" id="race" required>
+          <option value="under18">Under 18</option>
+          <option value="over18">Over 18</option>
+          <option value="race">Adult</option>
+        </select>
+        <br />
+      </div>
+      <button>tahel</button>
+    </form>
+  </body>
+</html>
