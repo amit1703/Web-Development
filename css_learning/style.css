@@ -1,0 +1,44 @@
+h1{
+    color: blue;
+    text-align: center;
+    text-decoration: black line-through dashed;
+}
+h2{
+    color: bisque;
+    text-decoration: underline dashed;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+label{
+    color: brown;
+}
+button:hover{
+    background-color: black;
+    color: wheat;
+}
+.border {
+    margin-top: 40px;
+            background-color: blanchedalmond;
+            border-width: 3px;
+            width: fit-content;
+            color: black;
+            border-radius: 3px;
+            border-style: solid;
+           text-align: center;   
+         display: inline-block;
+
+}
+p{
+    padding-left: 10px;
+    margin-top: 50px;
+}
+br{
+    color: black;
+}
+body{
+    margin:0;
+}
