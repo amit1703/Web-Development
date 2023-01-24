@@ -21,15 +21,17 @@ button:hover{
     color: wheat;
 }
 .border {
-    margin-top: 40px;
-            background-color: blanchedalmond;
-            border-width: 3px;
+         margin-top: 40px;
+         margin-left: 40%;
+            background-color: white;
+            border-width: 2px;
             width: fit-content;
-            color: black;
-            border-radius: 3px;
+            color: grey;
+            border-radius: 25px;
+            box-align: center;
+            text-align: center;
+            padding: 15px;
             border-style: solid;
-           text-align: center;   
-         display: inline-block;
 
 }
 p{
@@ -41,4 +43,17 @@ br{
 }
 body{
     margin:0;
+}
+select{
+    padding: 5px;
+}
+button{
+    padding: 5px 10px 5px ;
+}
+input[type = "email"], input[type = "password"]{
+    height: 20px;
+    width: 100px;
+}
+*{
+    background-color: grey;
 }
