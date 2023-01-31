@@ -1,0 +1,209 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    height: 100vh;
+}
+
+.wrapper {
+    border: 3px solid black;
+    border-radius: 16px;
+    background-color: #003049;
+    width: 300px;
+}
+
+.result {
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 2% 5%;
+    text-align: right;
+    background-color: whitesmoke;
+    font-size: 40px;
+    margin: 30px 10px 0px;
+}
+
+#one:hover,
+#two:hover,
+#four:hover,
+#five:hover,
+#six:hover,
+#seven:hover,
+#eight:hover,
+#nine:hover,
+#zero:hover {
+    background-color: #457b9d;
+    border: none;
+}
+
+button {
+    margin: 0.2em 1px;
+    font-size: 50px;
+    padding: 10px 20px;
+    width: 2em;
+    height: 1.5em;
+    border-radius: 10%;
+    border: 1px solid rgba(255, 192, 203, 0.5);
+    background-color: #fefae0;
+}
+
+.first-row,
+.second-row,
+.third-row {
+    display: flex;
+    margin-left: 5px;
+    justify-content: space-evenly;
+}
+
+
+.first-row {
+    margin-top: 10px;
+}
+
+#zero:focus,
+#one:focus,
+#two:focus,
+#three:focus,
+#four:focus,
+#five:focus,
+#six:focus,
+#seven:focus,
+#eight:focus,
+#nine:focus {
+    background-color: #dda15e;
+}
+
+#c {
+    background-color: #bc6c25;
+}
