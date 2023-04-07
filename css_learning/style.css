@@ -1,59 +1,73 @@
-h1{
+h1 {
     color: blue;
     text-align: center;
     text-decoration: black line-through dashed;
 }
-h2{
+
+h2 {
     color: bisque;
     text-decoration: underline dashed;
 }
-a{
+
+a {
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     text-decoration: underline;
 }
-label{
+
+label {
     color: brown;
 }
-button:hover{
+
+button:hover {
     background-color: black;
     color: wheat;
 }
+
 .border {
-         margin-top: 40px;
-         margin-left: 40%;
-            background-color: white;
-            border-width: 2px;
-            width: fit-content;
-            color: grey;
-            border-radius: 25px;
-            box-align: center;
-            text-align: center;
-            padding: 15px;
-            border-style: solid;
+    margin-top: 40px;
+    margin-left: 40%;
+    background-color: white;
+    border-width: 2px;
+    width: fit-content;
+    color: grey;
+    border-radius: 25px;
+    box-align: center;
+    text-align: center;
+    padding: 15px;
+    border-style: solid;
 
 }
-p{
+
+p {
     padding-left: 10px;
     margin-top: 50px;
 }
-br{
+
+br {
     color: black;
 }
-body{
-    margin:0;
+
+body {
+    margin: 0;
 }
-select{
+
+select {
     padding: 5px;
 }
-button{
-    padding: 5px 10px 5px ;
+
+button {
+    padding: 5px 10px 5px;
 }
-input[type = "email"], input[type = "password"]{
+
+input[type="email"],
+input[type="password"] {
     height: 20px;
     width: 100px;
 }
-*{
-    background-color: grey;
+
+* {
+    background-color: white;
 }
