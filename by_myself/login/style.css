@@ -1,0 +1,69 @@
+body {
+    background-color: #219ebc;
+}
+
+main {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#email,
+#password {
+    width: 90%;
+    font-size: 25px;
+    padding: 5px 5px;
+    border-top: black;
+    border-width: 1px;
+}
+
+#email {
+    margin-top: 15px;
+}
+
+#password {
+    margin-bottom: 75px;
+}
+
+
+
+#container {
+    background-color: #023047;
+    display: flex;
+    width: 30%;
+    height: 90%;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    color: black
+}
+
+h2 {
+    text-align: center;
+    color: white
+}
+
+
+
+label {
+    display: block;
+    margin-top: 50px;
+}
+
+button {
+    display: block;
+    width: 80%;
+
+
+}
+
+
+span,
+p {
+    display: inline;
+
+}
