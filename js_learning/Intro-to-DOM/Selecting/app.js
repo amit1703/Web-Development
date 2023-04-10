@@ -1,4 +1,7 @@
 const allImages = document.getElementsByTagName('img');
+const par = document.querySelector('p')
+let i = allImages.length;
+par.innerHTML =  "tahel aaktana"
 
 for (let img of allImages) {
     img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Silky_bantam.jpg/440px-Silky_bantam.jpg'
