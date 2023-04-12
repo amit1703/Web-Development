@@ -7,7 +7,33 @@
     <link rel="stylesheet" href="style.css" />
     <title>Score Keeper</title>
   </head>
+
   <body>
+    <h1>Score Keeper</h1>
+
+    <div id="container">
+      <div id="img">
+        <img
+          src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3784&q=80"
+          alt=""
+        />
+      </div>
+      <main>
+        <div id="score">
+          <span id="player1">0</span>
+          <span>vs</span>
+          <span id="player2">0</span>
+        </div>
+        <label for="count"></label>
+        <input type="range" name="count" id="count" max="9" min="3" />
+      </main>
+      <div id="buttons">
+        <button id="plusonep1">+1 for player one</button>
+        <button id="plusonep2">+1 for player two</button>
+        <button id="resetbtn">reset</button>
+      </div>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
