@@ -23,3 +23,11 @@ const addTweet = (username, tweet) => {
     tweetsContainer.append(newTweet);
 }
 
+function add(username , tweet){
+     const newTweet = document.createElement('li');
+    const bTag = document.createElement('b');
+    bTag.append(username)
+    newTweet.append(bTag);
+    newTweet.append(`- ${tweet}`)
+    tweetsContainer.append(newTweet);
+}
