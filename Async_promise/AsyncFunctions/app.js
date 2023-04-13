@@ -39,10 +39,9 @@ login('todd', 'corgifeetarecute')
 
 
 
-
 const delayedColorChange = (color, delay) => { // func gets two var, 
     //delay abd color and then changes the screen color
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => { 
         setTimeout(() => {
             document.body.style.backgroundColor = color; //changing the screen color
             resolve();
@@ -57,6 +56,9 @@ const delayedColorChange = (color, delay) => { // func gets two var,
 //     .then(() => delayedColorChange('blue', 1000))
 //     .then(() => delayedColorChange('indigo', 1000))
 //     .then(() => delayedColorChange('violet', 1000))
+// /then function is if the promise is resolved , if it is , do the next step , 
+// in this case the promise always be resolveis (check delayedcolorchange's code )
+
 
 
 async function rainbow() { // code lines will run only after the prev 
@@ -110,3 +112,4 @@ async function makeTwoRequests() {
     }
 
 }
+
