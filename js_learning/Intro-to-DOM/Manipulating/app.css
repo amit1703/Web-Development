@@ -4,10 +4,11 @@ body {
 }
 
 h1 {
-    color: olive
+    color: olive;
+
 }
 
-.purple{
+.purple {
     color: #7b07ff;
 }
 
@@ -18,10 +19,11 @@ h1 {
 #banner {
     width: 100%;
 }
+
 img.square {
     width: 400px;
     object-fit: cover;
-    height:400px;
+    height: 400px;
 }
 
 #toc {

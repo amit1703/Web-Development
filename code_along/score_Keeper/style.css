@@ -1,0 +1,71 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 100vh;
+    justify-content: center;
+    align-self: center;
+
+    border: 1px solid grey;
+}
+
+.count {
+    display: block;
+    font-size: 30px;
+
+}
+
+.container {
+    width: fit-content;
+    height: 40%;
+}
+
+img {
+    width: 600px;
+    height: 80%;
+}
+
+.buttons {
+    display: flex;
+}
+
+button {
+    width: 200px;
+    height: 70px;
+}
+
+#addtopone {
+    background-color: blue;
+    border: 0.5px solid black;
+    border-radius: 4px;
+}
+
+#addtoptwo {
+    background-color: red;
+    border: 0.5px solid black;
+    border-radius: 4px;
+}
+
+#reset {
+    background-color: white;
+    border: 0.5px solid black;
+    border-radius: 4px;
+}
+
+#addtopone:focus {
+    background-color: rgb(33, 33, 221);
+    border: 0.5px solid black;
+    border-radius: 4px;
+}
+
+#addtoptwo:focus {
+    background-color: rgb(197, 48, 48);
+    border: 0.5px solid black;
+    border-radius: 4px;
+}
+
+#reset:focus {
+    background-color: gray;
+    border: 0.5px solid black;
+    border-radius: 4px;
+}

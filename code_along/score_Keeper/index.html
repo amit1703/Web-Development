@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Score keeper</title>
+  </head>
+  <body>
+    <main>
+      <div class="imgid">
+        <img
+          src="https://images.unsplash.com/photo-1609432638531-5ef8d0507b90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpbmdwb25nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
+          alt=""
+        />
+      </div>
+      <div class="container">
+        <div class="count">
+          <span id="firstplayer"> 0 </span>
+          <span> to </span>
+          <span id="secondplayer"> 0 </span>
+        </div>
+        <label for="rounds">choose number of rounds</label>
+        <input type="number" name="number" id="rounds" min="3" max="9" />
+      </div>
+      <div class="buttons">
+        <button id="addtopone">+1 for player one</button>
+        <button id="addtoptwo">+1 for player two</button>
+        <button id="reset">reset</button>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
