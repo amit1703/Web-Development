@@ -3,5 +3,7 @@ const data = `{"ticker":{"base":"BTC","target":"USD","price":"11288.49813464","v
 
 // THIS IS A JS OBJECT
 const parsedData = JSON.parse(data);
+const h1 = document.querySelector('h1');
+h1.innerText = `${parsedData.ticker.price}$`
 
 
