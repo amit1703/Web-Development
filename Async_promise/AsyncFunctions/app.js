@@ -25,6 +25,12 @@ const login = async (username, password) => { // func get two vars and checking 
     throw 'Invalid Password'
 }
 
+login('rwerew' , 'rwrwr').then( () =>{
+    console.log('hello world')
+})
+.catch(() => {
+    console.log('tahel the nagar')
+})
 login('todd', 'corgifeetarecute')
     .then(msg => { // if resolve do this
         console.log("LOGGED IN!")
@@ -111,5 +117,17 @@ async function makeTwoRequests() {
         console.log("error is:", e) // e is the throw rejection error(Connection Timeout :()
     }
 
+}
+
+async function makereq(){
+    try{
+    const data1 = await fakeRequest('/tahel1')
+    console.log(data1)
+    const data2 = await fakeRequest('/tahel2')
+        console.log(data2)
+    }
+    catch(e){
+        console.log(e)
+    }
 }
 
