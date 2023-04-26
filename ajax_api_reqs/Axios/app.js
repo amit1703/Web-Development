@@ -16,6 +16,8 @@ const getStarWarsPerson = async (id) => {
       h1s.innerHTML = e;
   }
 };
-
-getStarWarsPerson(5)
-getStarWarsPerson(10);
+for(let i =0 ; i<10 ; i++){
+  setTimeout(() => {
+   getStarWarsPerson(i)
+}, 5000)
+}
