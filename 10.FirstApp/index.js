@@ -21,7 +21,7 @@ app.get('/', (req , res ) =>{
 
 //these are all post reqs , what usually in use. 
 
- app.listen(3000, ()=>{// this function will run only when the server is up ,
+ app.listen(8080, ()=>{// this function will run only when the server is up ,
     // when the server is up , this code will run.
 
         console.log("listning for port 3000!")
