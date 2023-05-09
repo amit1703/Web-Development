@@ -52,4 +52,4 @@ app.get('/', (req , res ) =>{
     const {q} = req.query;
     res.send(`seach for: ${q}`)
     
- })
+ }) 
