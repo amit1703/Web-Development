@@ -24,7 +24,7 @@ app.get('/', (req , res ) =>{
  app.listen(8080, ()=>{// this function will run only when the server is up ,
     // when the server is up , this code will run.
 
-        console.log("listning for port 3000!")
+        console.log("listning for port 8080!")
  })
 
  //express path params!

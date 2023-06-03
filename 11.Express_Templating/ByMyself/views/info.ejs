@@ -1,0 +1,19 @@
+<%- include('partials/head.ejs') %>
+  <body>
+      <%- include('partials/navbar.ejs') %>
+    <h1>Browsing: <%=datas.name%></h2>
+    <h2>description: <%=datas.description%></h2>
+    <p><%=datas.subscribers%> subscribers</p>
+
+    <hr />
+    
+      <%for(let post of datas.posts){%>
+      <h3><%=post.title%></h3>
+      <%=post.author%>
+        <br>
+     <img src="<%= post.img %>" alt=""> 
+      <br> <% }%>
+
+    </ul>  
+  </body>
+</html>
