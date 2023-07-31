@@ -5,7 +5,7 @@ const app = express();
 app.set(express.json);//for parsing to post as a json
 app.set(express.urlencoded({extended:true}))// for parsing data to post (must)
 
-
+//fakedata 
 const comments = [
     {
         username:'amit',
