@@ -34,7 +34,7 @@ app.get('/', (req , res ) =>{
     // if the path matches to /r/something run this function
     const {subreddit} = req.params; // the subreddit info 
     // /r/tahel , params = tahel 
-    res.send(`browsing the ${subreddit}subreddit`); 
+    res.send(`browsing the ${subreddit} subreddit`); 
  
  }) 
  app.get('/r/:subreddit/:postID', (req , res) =>{
@@ -42,7 +42,7 @@ app.get('/', (req , res ) =>{
     // if the path matches to /r/something run this function
     const {subreddit , postID} = req.params; // the subreddit info 
     // /r/tahel , params = tahel 
-    res.send(`browsing the ${subreddit} subreddit, post id ${postID}`); 
+    res.send(`browsing the ${subreddit}  subreddit, post id ${postID}`); 
  
  }) 
 
