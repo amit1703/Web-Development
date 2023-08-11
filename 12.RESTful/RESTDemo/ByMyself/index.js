@@ -1,5 +1,6 @@
-const express = require('express')
-const app = express();
+const express = require('express') // require the module "express" (the server)
+const app = express(); //starting the server
+
 
 
 app.set(express.json);//for parsing to post as a json
@@ -26,10 +27,10 @@ const comments = [
 
 ]
 
-app.get('/comments' , (req,res)=>{
+app.get('/comments' , (req,res)=>{// if the address is /comments render index.ejs screen in views folder
     res.render('index.ejs', ({comments}))
 })
-app.get('/comments/new' , (req,res)=>{
+app.get('/comments/new' , (req,res)=>{// " ... "
     res.render('newcomment.ejs' ,({comments}))
 })
 app.post('/comments' , (req,res)=>{
