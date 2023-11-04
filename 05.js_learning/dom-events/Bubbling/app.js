@@ -1,7 +1,7 @@
-const button = document.querySelector('#changeColor');
-const container = document.querySelector('#container');
+const button = document.querySelector('#changeColor');  // select a specific id 
+const container = document.querySelector('#container'); // " ... " 
 
-button.addEventListener('click', function (e) {
+button.addEventListener('click', function (e) {  // changing backgorund color 
     container.style.backgroundColor = makeRandColor();
     e.stopPropagation();
 })
