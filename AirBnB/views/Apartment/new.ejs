@@ -1,26 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New apartment</title>
-  </head>
-  <body>
-    <h1>new apartment!</h1>
+<% layout('layouts/boilerplate') %>
 
-    <form action="/apartments" method="post">
-      <label for="title">apartment name:</label>
-      <input type="text" name="title" id="title" />
-      <label for="description">apartment description:</label>
-      <input type="text" name="description" id="description" />
-      <label for="price">Price for a night:</label>
-      <input type="text" name="price" id="price" />
-      <label for="location">Location:</label>
-      <input type="text" name="location" id="location" />
-      <button>Submit</button>
-    </form>
-    <footer>
-      <a href="/apartment">Go back</a>
-    </footer>
-  </body>
-</html>
+<h1>new apartment!</h1>
+
+<form action="/apartments" method="post" class="mx-3">
+  <div class="mb-3">
+    <label for="title" class="form-label">apartment name:</label>
+    <input type="text" class="form-control" id="title" />
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <input type="text" class="form-control" id="description" />
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price for a night:</label>
+    <input type="text" class="form-control" id="price" />
+  </div>
+
+  <div class="mb-3">
+    <label for="location" class="form-label">Location:</label>
+    <input type="text" class="form-control" id="location" />
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <button type="submit" class="btn btn-primary bg-light text-dark">
+      Submit
+    </button>
+  </div>
+</form>

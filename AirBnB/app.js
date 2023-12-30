@@ -3,9 +3,12 @@ const app = express();
 const path = require('path')
 const mongoose = require('mongoose')
 const Apartment = require('./models/Apartment')
+const ejsMate = require('ejs-mate')
 
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
+
+app.engine('ejs', ejsMate)
 
 mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
     .then(() => {

@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apartments</title>
-  </head>
-  <body>
-    <h1>All apartments on the site!</h1>
-    <ul>
-      <% for(let i = 0 ; i < apartments.length ; i++){ %>
+<% layout('layouts/boilerplate') %>
 
-      <ul>
-       
-       <li> <a href="/apartments/<%= apartments[i]._id %>"><b><%= apartments[i].title %></b></a></li>
-        </li>
-        <%= apartments[i].location %>
-      </ul>
+<div class="mx-4">
+  <h3>Apartments <small class="text-muted">choose one for you!</small></h3>
+</div>
+<ul>
+  <% for(let i = 0 ; i < apartments.length ; i++){ %>
 
-      <% } %>
-    </ul>
-    <footer>  
-        <a href="/apartments/new"> Add a new apartment!</a>   
-       </footer>
-  </body>
-</html>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <div class="card">
+        <h5 class="card-header"><%= apartments[i].title %></h5>
+        <div class="card-body">
+          <h5 class="card-title"><%= apartments[i].title %></h5>
+          <p class="card-text"><%= apartments[i].description %></p>
+          <p class="card-text"><%= apartments[i].price %></p>
+          <p class="card-text"><%= apartments[i].location %></p>
+          <a href="/apartments/<%= apartments[i]._id %>" class="btn btn-primary"
+            >Edit</a
+          >
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <% } %>
+</ul>

@@ -1,46 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit apartment info</title>
-  </head>
-  <body>
-    <h1>edit apartment:</h1>
-    <%= apartment._id %>
-    <form action="/apartments/<%= apartment._id %>?_method=put" , method="POST">
-      <label for="title">apartment name:</label>
-      <input
-        type="text"
-        name="apartment[title]"
-        id="title"
-        value="<%= apartment.title %>"
-      />
-      <label for="description">apartment description:</label>
-      <input
-        type="text"
-        name="apartment[description]"
-        id="description"
-        value="<%= apartment.description %>"
-      />
-      <label for="price">Price for a night:</label>
-      <input
-        type="text"
-        name="apartment[price]"
-        id="price"
-        value="<%= apartment.price %>"
-      />
-      <label for="location">Location:</label>
-      <input
-        type="text"
-        name="apartment[location]"
-        id="location"
-        value="<%= apartment.location %>"
-      />
-      <button>Finish</button>
-    </form>
-    <footer>
-      <a href="/apartments/<%= apartment._id %>"> Go back</a>
-    </footer>
-  </body>
-</html>
+<% layout('layouts/boilerplate') %>
+
+<h1>edit apartment:</h1>
+<%= apartment._id %>
+<form action="/apartments/<%= apartment._id %>?_method=put" , method="POST">
+  <label for="title">apartment name:</label>
+  <input
+    type="text"
+    name="apartment[title]"
+    id="title"
+    value="<%= apartment.title %>"
+  />
+  <label for="description">apartment description:</label>
+  <input
+    type="text"
+    name="apartment[description]"
+    id="description"
+    value="<%= apartment.description %>"
+  />
+  <label for="price">Price for a night:</label>
+  <input
+    type="text"
+    name="apartment[price]"
+    id="price"
+    value="<%= apartment.price %>"
+  />
+  <label for="location">Location:</label>
+  <input
+    type="text"
+    name="apartment[location]"
+    id="location"
+    value="<%= apartment.location %>"
+  />
+  <button>Finish</button>
+</form>
