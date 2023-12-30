@@ -15,9 +15,16 @@
       <br />
       <b>Price:</b> <%= apartment.price %>
     </div>
-    <div>
+
+    <form
+      action="/apartments/<%= apartment._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button>delete !</button>
+    </form>
+    <footer>
       <a href="/apartments/<%= apartment._id %>/edit"> Edit apartment</a>
-      <a href="/apartments">Back</a>
-    </div>
+      <a href="/apartments">Go back</a>
+    </footer>
   </body>
 </html>

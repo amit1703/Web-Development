@@ -7,8 +7,8 @@
   </head>
   <body>
     <h1>edit apartment:</h1>
-
-    <form action="/apartments/<%= apartment._id %>?_method=PUT" , method="POST">
+    <%= apartment._id %>
+    <form action="/apartments/<%= apartment._id %>?_method=put" , method="POST">
       <label for="title">apartment name:</label>
       <input
         type="text"
@@ -39,5 +39,8 @@
       />
       <button>Finish</button>
     </form>
+    <footer>
+      <a href="/apartments/<%= apartment._id %>"> Go back</a>
+    </footer>
   </body>
 </html>
