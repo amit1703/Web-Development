@@ -3,8 +3,11 @@ const app = express();
 const path = require('path')
 const mongoose = require('mongoose')
 const Hotel = require('./models/hotel')
+const methodOverride = require('method-override')
 
-mongoose.connect('mongodb://localhost:27017/OneNightStay', {})//connection to mongoDB
+app.use(methodOverride('_method'))
+
+mongoose.connect('mongodb://localhost:27017/hotel-for-you', {})//connection to mongoDB
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
@@ -23,30 +26,45 @@ app.get('/' , (req,res)=>{
     res.render('home.ejs')
 })
 
-app.get('/Hotels', async (req,res)=>{
+app.get('/hotels', async (req,res)=>{
 
     const hotels = await Hotel.find({})
-    
-
     res.render('Hotels/index.ejs' ,{hotels})
 })
 
-app.get('/Hotels/new',(req,res)=>{
+app.get('/hotels/new',(req,res)=>{
+    //sends to the new hotel form
     res.render('Hotels/new.ejs')
 }) 
 
-app.get('/Hotels/:id', async (req,res)=>{
+app.get('/hotels/:id', async (req,res)=>{
     const { id } = req.params;
     const hotel = await Hotel.findById(id)
     res.render('Hotels/show.ejs' ,{hotel})
 })
 
+app.get('/hotels/:id/edit', async(req,res)=>{
+    //relate to edit a hotel
+    const { id } = req.params;
+    const hotel = await Hotel.findById(id)
+    res.render('Hotels/edit.ejs' ,{hotel})
+})
 
-app.post('/', async(req,res)=>{
+app.put('/hotels/:id', async(req,res)=>{
+    //updating the hotel (error 30.12.23)
+    const {id} = req.params;
+    const hotel = await Hotel.findByIdAndUpdate(id , {...req.body.hotel})
 
+    res.redirect('Hotels/show.ejs',{hotel})
+
+})
+
+app.post('/hotels', async(req,res)=>{
+//relate to new hotel
     const hotel = new Hotel(req.body.hotel)
     await hotel.save()
-    app.render('home.ejs')
+    const hotels = await Hotel.find({})
+    res.redirect('Hotels/index.ejs', {hotels})
 })
 
 app.listen(3000, ()=>{

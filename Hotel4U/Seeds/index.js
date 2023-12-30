@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const Hotel = require('../models/hotel')
 const city = require('./cities')
 const {titles} = require('./seedHelper')
-mongoose.connect('mongodb://localhost:27017/OneNightStay', {})//connection to mongoDB
+mongoose.connect('mongodb://localhost:27017/hotel-for-you', {})//connection to mongoDB
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })

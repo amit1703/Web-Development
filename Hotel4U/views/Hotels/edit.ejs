@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit hotel info</title>
+  </head>
+  <body>
+    <h1>edit hotel:</h1>
+
+    <form action="/hotels/<%= hotel._id %>?_method=PUT" , method="POST">
+      <label for="title">Hotel name:</label>
+      <input
+        type="text"
+        name="hotel[title]"
+        id="title"
+        value="<%= hotel.title %>"
+      />
+      <label for="description">Hotel description:</label>
+      <input
+        type="text"
+        name="hotel[description]"
+        id="description"
+        value="<%= hotel.description %>"
+      />
+      <label for="price">Price for a night:</label>
+      <input
+        type="text"
+        name="hotel[price]"
+        id="price"
+        value="<%= hotel.price %>"
+      />
+      <label for="location">Location:</label>
+      <input
+        type="text"
+        name="hotel[location]"
+        id="location"
+        value="<%= hotel.location %>"
+      />
+      <button>Finish</button>
+    </form>
+  </body>
+</html>
