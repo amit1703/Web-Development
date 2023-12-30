@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= apartment.title %>:</h1>
+
+    <div>
+      <b>Description:</b> <%= apartment.description %>
+      <br />
+      <b>Location:</b> <%=apartment.location %>
+      <br />
+      <b>Price:</b> <%= apartment.price %>
+    </div>
+    <div>
+      <a href="/apartments/<%= apartment._id %>/edit"> Edit apartment</a>
+      <a href="/apartments">Back</a>
+    </div>
+  </body>
+</html>

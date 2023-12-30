@@ -1,10 +1,10 @@
 
 const path = require('path')
 const mongoose = require('mongoose')
-const Hotel = require('../models/hotel')
+const Apartment = require('../models/Apartment')
 const city = require('./cities')
 const {titles} = require('./seedHelper')
-mongoose.connect('mongodb://localhost:27017/hotel-for-you', {})//connection to mongoDB
+mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
@@ -15,16 +15,16 @@ mongoose.connect('mongodb://localhost:27017/hotel-for-you', {})//connection to m
 
     const seedDB = async ()=>{
 
-        await Hotel.deleteMany({})//deletes all items inside this model
-        for(let i = 0; i<50 ; i++){
+        await Apartment.deleteMany({})//deletes all items inside this model
+        for(let i = 0; i<Apartment.length ; i++){
             const random1000 = Math.floor(Math.random() *1000);
             const randomTitle = Math.floor(Math.random() * titles.length)
-            const hotel = new Hotel({
+            const apartment = new Apartment({
                 title: titles[randomTitle],
                 location: `${city[random1000].city}, ${city[random1000].state}`
 
             })
-            await hotel.save()
+            await apartment.save()
 
         }
             

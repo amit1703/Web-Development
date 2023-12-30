@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const mongoose = require('mongoose')
-const Hotel = require('./models/hotel')
+const Apartment = require('./models/Apartment')
 const methodOverride = require('method-override')
 
 app.use(methodOverride('_method'))
 
-mongoose.connect('mongodb://localhost:27017/hotel-for-you', {})//connection to mongoDB
+mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
@@ -26,45 +26,45 @@ app.get('/' , (req,res)=>{
     res.render('home.ejs')
 })
 
-app.get('/hotels', async (req,res)=>{
+app.get('/apartments', async (req,res)=>{
 
-    const hotels = await Hotel.find({})
-    res.render('Hotels/index.ejs' ,{hotels})
+    const apartments = await Apartment.find({})
+    res.render('Apartment/index.ejs' ,{apartments})
 })
 
-app.get('/hotels/new',(req,res)=>{
-    //sends to the new hotel form
-    res.render('Hotels/new.ejs')
+app.get('/apartments/new',(req,res)=>{
+    //sends to the new Apartment form
+    res.render('Apartment/new.ejs')
 }) 
 
-app.get('/hotels/:id', async (req,res)=>{
+app.get('/apartments/:id', async (req,res)=>{
     const { id } = req.params;
-    const hotel = await Hotel.findById(id)
-    res.render('Hotels/show.ejs' ,{hotel})
+    const apartment = await Apartment.findById(id)
+    res.render('Apartment/show.ejs' ,{apartment})
 })
 
-app.get('/hotels/:id/edit', async(req,res)=>{
-    //relate to edit a hotel
+app.get('/apartments/:id/edit', async(req,res)=>{
+    //relate to edit a Apartment
     const { id } = req.params;
-    const hotel = await Hotel.findById(id)
-    res.render('Hotels/edit.ejs' ,{hotel})
+    const apartment = await Apartment.findById(id)
+    res.render('Apartment/edit.ejs' ,{apartment})
 })
 
-app.put('/hotels/:id', async(req,res)=>{
-    //updating the hotel (error 30.12.23)
+app.put('/apartments/:id', async(req,res)=>{
+    //updating the Apartment (error 30.12.23)
     const {id} = req.params;
-    const hotel = await Hotel.findByIdAndUpdate(id , {...req.body.hotel})
+    const apartment = await Apartment.findByIdAndUpdate(id , {...req.body.apartment})
 
-    res.redirect('Hotels/show.ejs',{hotel})
+    res.redirect('Apartment/show.ejs',{apartment})
 
 })
 
-app.post('/hotels', async(req,res)=>{
-//relate to new hotel
-    const hotel = new Hotel(req.body.hotel)
-    await hotel.save()
-    const hotels = await Hotel.find({})
-    res.redirect('Hotels/index.ejs', {hotels})
+app.post('/apartments', async(req,res)=>{
+//relate to new Apartment
+    const apartment = new Apartment(req.body.apartment)
+    await apartment.save()
+    const apartments = await Apartment.find({})
+    res.redirect('Apartment/index.ejs', {apartments})
 })
 
 app.listen(3000, ()=>{

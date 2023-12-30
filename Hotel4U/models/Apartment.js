@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const HotelSchema = new Schema({
+const ApartmentSchema = new Schema({
 
     title: String,
     price: String,
@@ -11,4 +11,4 @@ const HotelSchema = new Schema({
 })
 
 
-module.exports = mongoose.model('Hotel', HotelSchema)
+module.exports = mongoose.model('Apartment', ApartmentSchema)

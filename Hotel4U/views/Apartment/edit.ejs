@@ -3,39 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit hotel info</title>
+    <title>Edit apartment info</title>
   </head>
   <body>
-    <h1>edit hotel:</h1>
+    <h1>edit apartment:</h1>
 
-    <form action="/hotels/<%= hotel._id %>?_method=PUT" , method="POST">
-      <label for="title">Hotel name:</label>
+    <form action="/apartments/<%= apartment._id %>?_method=PUT" , method="POST">
+      <label for="title">apartment name:</label>
       <input
         type="text"
-        name="hotel[title]"
+        name="apartment[title]"
         id="title"
-        value="<%= hotel.title %>"
+        value="<%= apartment.title %>"
       />
-      <label for="description">Hotel description:</label>
+      <label for="description">apartment description:</label>
       <input
         type="text"
-        name="hotel[description]"
+        name="apartment[description]"
         id="description"
-        value="<%= hotel.description %>"
+        value="<%= apartment.description %>"
       />
       <label for="price">Price for a night:</label>
       <input
         type="text"
-        name="hotel[price]"
+        name="apartment[price]"
         id="price"
-        value="<%= hotel.price %>"
+        value="<%= apartment.price %>"
       />
       <label for="location">Location:</label>
       <input
         type="text"
-        name="hotel[location]"
+        name="apartment[location]"
         id="location"
-        value="<%= hotel.location %>"
+        value="<%= apartment.location %>"
       />
       <button>Finish</button>
     </form>

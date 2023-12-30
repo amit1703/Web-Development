@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apartments</title>
+  </head>
+  <body>
+    <h1>All apartments on the site!</h1>
+    <ul>
+      <% for(let i = 0 ; i < apartments.length ; i++){ %>
+
+      <ul>
+       
+       <li> <a href="/apartments/<%= apartments[i]._id %>"><b><%= apartments[i].title %></b></a></li>
+        </li>
+        <%= apartments[i].location %>
+      </ul>
+
+      <% } %>
+    </ul>
+  </body>
+</html>
