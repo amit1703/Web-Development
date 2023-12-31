@@ -1,27 +1,23 @@
 <% layout('layouts/boilerplate') %>
 
-<div class="mx-4">
+<div class="d-flex justify-content-center mt-2">
   <h3>Apartments <small class="text-muted">choose one for you!</small></h3>
 </div>
 <ul>
   <% for(let i = 0 ; i < apartments.length ; i++){ %>
 
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <div class="card">
-        <h5 class="card-header"><%= apartments[i].title %></h5>
-        <div class="card-body">
-          <h5 class="card-title"><%= apartments[i].title %></h5>
-          <p class="card-text"><%= apartments[i].description %></p>
-          <p class="card-text"><%= apartments[i].price %></p>
-          <p class="card-text"><%= apartments[i].location %></p>
-          <a href="/apartments/<%= apartments[i]._id %>" class="btn btn-primary"
-            >Edit</a
-          >
-        </div>
-      </div>
-    </li>
-  </ul>
+  <li class="list-group-item my-3 mx-2">
+    <div class="card-body">
+      <h5 class="card-title"><%= apartments[i].title %></h5>
+      <p class="card-text"><%= apartments[i].description %></p>
+      <a
+        href="/apartments/<%= apartments[i]._id%>"
+        class="btn btn color-primary bg-secondary text-white"
+        >Details</a
+      >
+    </div>
+    <div class="card-footer text-muted"><%= apartments[i].location %></div>
+  </li>
 
   <% } %>
 </ul>

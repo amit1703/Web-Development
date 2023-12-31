@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') %>
 
-<h1><%= apartment.title %>:</h1>
+<h1><%= apartment.title %></h1>
 
 <div>
   <b>Description:</b> <%= apartment.description %>
@@ -9,7 +9,9 @@
   <br />
   <b>Price:</b> <%= apartment.price %>
 </div>
-
+<div class="d-flex justify-content-start my-5 mx-2">
+  <a  class="btn btn color-primary bg-secondary text-white" href="/apartments/<%= apartment._id %>/edit">Edit information</a>
 <form action="/apartments/<%= apartment._id %>?_method=DELETE" method="POST">
-  <button>delete !</button>
+  <button class="btn btn color-primary bg-secondary text-white mx-2">delete !</button>
+</div>
 </form>
