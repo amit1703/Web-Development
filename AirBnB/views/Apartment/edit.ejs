@@ -1,35 +1,63 @@
 <% layout('layouts/boilerplate') %>
 
-<h1>edit apartment:</h1>
-<%= apartment._id %>
-<form action="/apartments/<%= apartment._id %>?_method=put" , method="POST">
-  <label for="title">apartment name:</label>
-  <input
-    type="text"
-    name="apartment[title]"
-    id="title"
-    value="<%= apartment.title %>"
-  />
-  <label for="description">apartment description:</label>
-  <input
-    type="text"
-    name="apartment[description]"
-    id="description"
-    value="<%= apartment.description %>"
-  />
-  <label for="price">Price for a night:</label>
-  <input
-    type="text"
-    name="apartment[price]"
-    id="price"
-    value="<%= apartment.price %>"
-  />
-  <label for="location">Location:</label>
-  <input
-    type="text"
-    name="apartment[location]"
-    id="location"
-    value="<%= apartment.location %>"
-  />
-  <button>Finish</button>
-</form>
+<div class="row">
+  <h1 class="text-center">Add apartment</h1>
+  <div class="col-6 offset-3">
+    <form action="/apartments/<%= apartment._id %>?_method=put" , method="POST">
+      <div class="mb-3">
+        <label for="title" class="form-label">apartment name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          value="<%= apartment.title %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          type="text"
+          class="form-control"
+          id="description"
+          value="<%= apartment.description %>"
+        >
+        </textarea>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">$</span>
+        <input
+          type="number"
+          class="form-control"
+          aria-describedby="basic-addon1"
+          placeholder="per night"
+          value="<%= apartment.price %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="img" class="form-label">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="img"
+          value="<%= apartment.image %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          value="<%= apartment.location %>"
+        />
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn color-primary bg-secondary text-white">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

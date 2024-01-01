@@ -1,17 +1,34 @@
 <% layout('layouts/boilerplate') %>
 
-<h1><%= apartment.title %></h1>
-
-<div>
-  <b>Description:</b> <%= apartment.description %>
-  <br />
-  <b>Location:</b> <%=apartment.location %>
-  <br />
-  <b>Price:</b> <%= apartment.price %>
+<div class="card mt-3 d-flex justify-content-center" style="width: 18rem">
+  <img
+    class="card-img-top"
+    src=" <%= apartment.image %>"
+    alt="Card image cap"
+  />
+  <div class="card-body">
+    <h5 class="card-title"><%= apartment.title %></h5>
+    <p class="card-text"><%= apartment.description %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= apartment.price %></li>
+    <li class="list-group-item"><%= apartment.location %></li>
+  </ul>
+  <div class="row card-body">
+    <div class="d-flex justify-content-center">
+      <form
+        action="/apartments/<%= apartment._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button class="btn btn color-primary bg-secondary text-white mx-2">
+          delete
+        </button>
+      </form>
+    </div>
+    <a
+      href="/apartments/<%= apartment._id %>/edit"
+      class="btn btn color-primary bg-secondary text-white mx-2 mt-3"
+      >Edit</a
+    >
+  </div>
 </div>
-<div class="d-flex justify-content-start my-5 mx-2">
-  <a  class="btn btn color-primary bg-secondary text-white" href="/apartments/<%= apartment._id %>/edit">Edit information</a>
-<form action="/apartments/<%= apartment._id %>?_method=DELETE" method="POST">
-  <button class="btn btn color-primary bg-secondary text-white mx-2">delete !</button>
-</div>
-</form>

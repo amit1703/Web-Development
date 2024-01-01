@@ -16,13 +16,14 @@ mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
     const seedDB = async ()=>{
 
         await Apartment.deleteMany({})//deletes all items inside this model
-        for(let i = 0; i<Apartment.length ; i++){
+        for(let i = 0; i<50 ; i++){
             const random1000 = Math.floor(Math.random() *1000);
             const randomTitle = Math.floor(Math.random() * titles.length)
             const apartment = new Apartment({
                 title: titles[randomTitle],
-                location: `${city[random1000].city}, ${city[random1000].state}`
-
+                location: `${city[random1000].city}, ${city[random1000].state}`,
+                image: 'https://source.unsplash.com/collection/4807150',
+                description: " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos solutanumquam necessitatibus illo, quia, asperiores voluptatibus fugaeligendi facilis nihil, quisquam aperiam vel? Aspernatur nostrum iureenim minus! Unde, eius?",
             })
             await apartment.save()
 
