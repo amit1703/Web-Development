@@ -1,34 +1,35 @@
 <% layout('layouts/boilerplate') %>
-
-<div class="card mt-3 d-flex justify-content-center" style="width: 18rem">
-  <img
-    class="card-img-top"
-    src=" <%= apartment.image %>"
-    alt="Card image cap"
-  />
-  <div class="card-body">
-    <h5 class="card-title"><%= apartment.title %></h5>
-    <p class="card-text"><%= apartment.description %></p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= apartment.price %></li>
-    <li class="list-group-item"><%= apartment.location %></li>
-  </ul>
-  <div class="row card-body">
-    <div class="d-flex justify-content-center">
-      <form
-        action="/apartments/<%= apartment._id %>?_method=DELETE"
-        method="POST"
-      >
-        <button class="btn btn color-primary bg-secondary text-white mx-2">
-          delete
-        </button>
-      </form>
+<div class="container">
+  <div class="justify-content-center card mt-10">
+    <img
+      class="card-img-top"
+      src=" <%= apartment.image %>"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%= apartment.title %></h5>
+      <p class="card-text"><%= apartment.description %></p>
     </div>
-    <a
-      href="/apartments/<%= apartment._id %>/edit"
-      class="btn btn color-primary bg-secondary text-white mx-2 mt-3"
-      >Edit</a
-    >
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= apartment.price %>$ per night</li>
+      <li class="list-group-item"><%= apartment.location %></li>
+    </ul>
+    <div class="row card-body">
+      <div class="d-flex justify-content-center">
+        <form
+          action="/apartments/<%= apartment._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button class="btn btn color-primary bg-secondary text-white mx-2">
+            delete
+          </button>
+        </form>
+      </div>
+      <a
+        href="/apartments/<%= apartment._id %>/edit"
+        class="btn btn color-primary bg-secondary text-white mx-2 mt-3"
+        >Edit</a
+      >
+    </div>
   </div>
 </div>

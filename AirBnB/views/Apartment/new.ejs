@@ -6,30 +6,57 @@
     <form action="/apartments" method="post" class="mx-3">
       <div class="mb-3">
         <label for="title" class="form-label">apartment name</label>
-        <input type="text" class="form-control" id="title" />
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          required
+        />
       </div>
 
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea type="text" class="form-control" id="description"> </textarea>
+        <textarea
+          type="text"
+          class="form-control"
+          id="description"
+          name="description"
+          required
+        >
+        </textarea>
       </div>
 
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">$</span>
         <input
           type="number"
+          name="price"
           class="form-control"
           aria-describedby="basic-addon1"
           placeholder="per night"
+          required
         />
       </div>
       <div class="mb-3">
         <label for="img" class="form-label">Image URL</label>
-        <input type="text" class="form-control" id="img" />
+        <input
+          type="text"
+          class="form-control"
+          id="img"
+          name="image"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="location" class="form-label">Location</label>
-        <input type="text" class="form-control" id="location" />
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          name="location"
+          required
+        />
       </div>
       <div class="d-flex justify-content-center mt-3">
         <button type="submit" class="btn color-primary bg-secondary text-white">

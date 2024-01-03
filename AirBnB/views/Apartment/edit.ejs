@@ -10,7 +10,9 @@
           type="text"
           class="form-control"
           id="title"
+          name="apartment[title]"
           value="<%= apartment.title %>"
+          required
         />
       </div>
 
@@ -19,9 +21,12 @@
         <textarea
           type="text"
           class="form-control"
+          name="apartment[description]"
           id="description"
-          value="<%= apartment.description %>"
+          required
         >
+        <%= apartment.description %>
+
         </textarea>
       </div>
 
@@ -32,7 +37,9 @@
           class="form-control"
           aria-describedby="basic-addon1"
           placeholder="per night"
+          name="apartment[price]"
           value="<%= apartment.price %>"
+          required
         />
       </div>
       <div class="mb-3">
@@ -41,16 +48,20 @@
           type="text"
           class="form-control"
           id="img"
+          name="apartment[image]"
           value="<%= apartment.image %>"
+          required
         />
       </div>
       <div class="mb-3">
         <label for="location" class="form-label">Location</label>
         <input
           type="text"
+          name="apartment[location]"
           class="form-control"
           id="location"
           value="<%= apartment.location %>"
+          required
         />
       </div>
       <div class="d-flex justify-content-center mt-3">

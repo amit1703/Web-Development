@@ -20,6 +20,7 @@ mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
             const random1000 = Math.floor(Math.random() *1000);
             const randomTitle = Math.floor(Math.random() * titles.length)
             const apartment = new Apartment({
+                price: 50,
                 title: titles[randomTitle],
                 location: `${city[random1000].city}, ${city[random1000].state}`,
                 image: 'https://source.unsplash.com/collection/4807150',
