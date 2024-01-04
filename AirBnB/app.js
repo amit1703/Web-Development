@@ -4,8 +4,11 @@ const path = require('path')
 const mongoose = require('mongoose')
 const Apartment = require('./models/Apartment')
 const ejsMate = require('ejs-mate')
+const Review = require('./models/Reviews')
 
-const methodOverride = require('method-override')
+
+const methodOverride = require('method-override');
+const { render } = require('ejs');
 app.use(methodOverride('_method'))
 
 app.engine('ejs', ejsMate)
@@ -80,6 +83,28 @@ app.delete('/apartments/:id', async(req,res)=>{
 
     res.redirect('/apartments')
 
+
+})
+
+app.get('/apartments/:id/review', (req,res)=>{
+    const {id} = req.params;
+    res.render('Apartment/review.ejs',({id}))
+
+})
+
+app.post('/apartments/:id', async (req,res)=>{
+ 
+    const {id} = req.params;
+    const {username, body, rating} = req.body.review;
+    const review = new Review({
+
+        apartment , id,
+        username: username,
+        body: body,
+        rating : rating
+    })
+    await review.save()
+   res.redirect(`apartment/${id}`)
 
 })
 
