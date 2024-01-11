@@ -29,7 +29,11 @@ app.use(express.urlencoded({extended: true}))
 // up to here, is a must 
 
 
-
+app.use((err, req ,res ,next)=>{
+    //when will be an express error(like route exist but there is an error there) then this function will run
+    console.log('error ', err)
+    next(err)
+})
 
 
 app.get('/' , (req,res)=>{
@@ -95,16 +99,13 @@ app.get('/apartments/:id/review', (req,res)=>{
 app.post('/apartments/:id', async (req,res)=>{
  
     const {id} = req.params;
-    const {username, body, rating} = req.body.review;
+    const { body, rating} = req.body.review;
     const review = new Review({
-
-        apartment , id,
-        username: username,
         body: body,
         rating : rating
     })
     await review.save()
-   res.redirect(`apartment/${id}`)
+   res.redirect(`/apartments/${id}`)
 
 })
 

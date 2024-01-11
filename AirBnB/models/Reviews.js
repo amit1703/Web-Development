@@ -11,13 +11,5 @@ const reviewSchema = new Schema({
         type: Number,
         required: true
     },
-    apartment:{
-        type: String,
-        required: true
-    },
-    username:{
-        type: String,
-        required: true
-    }
 })
 module.exports = mongoose.model('Reviews', reviewSchema);

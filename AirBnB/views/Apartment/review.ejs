@@ -3,18 +3,7 @@
 <div class="row">
   <h1 class="text-center">Add apartment</h1>
   <div class="col-6 offset-3">
-    <form action="/apartments" method="post" class="mx-3">
-      <div class="mb-3">
-        <label for="title" class="form-label">username</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          name="review[username]"
-          required
-        />
-      </div>
-
+    <form action="/apartments/<%= id %>" method="post" class="mx-3">
       <div class="mb-3">
         <label for="description" class="form-label">body of review</label>
         <textarea
