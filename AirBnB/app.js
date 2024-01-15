@@ -6,7 +6,6 @@ const Apartment = require('./models/Apartment')
 const ejsMate = require('ejs-mate')
 const Review = require('./models/Reviews')
 
-
 const methodOverride = require('method-override');
 const { render } = require('ejs');
 app.use(methodOverride('_method'))
@@ -30,7 +29,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 
-
+    
 
 app.get('/' , (req,res)=>{
 
