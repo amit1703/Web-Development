@@ -25,11 +25,12 @@ mongoose.connect('mongodb://localhost:27017/tweets', {})//connection to mongoDB
 
 
 app.get('/tweets',async (req,res)=>{
-    const tweets = await Tweet.find({})
+    const tweets = await Tweet.find({}).populate('user', 'name')
+
 
     
     
-    res.render('Tweet/show',({tweets}))
+    res.render('Tweet/show',{tweets})
 })
 
 app.get('/register', (req,res)=>{
@@ -47,8 +48,10 @@ app.post('/tweets', async (req,res)=>{
 
 })
 app.get('/:id' , async(req,res)=>{
-    const user = await User.findById(req.params.id)
-    res.render('User/show' ,({user}) )
+    const {id} = req.params
+    const user = await User.findById(id)
+    console.log(user)
+    res.render('User/show' ,{user} )
 })
 
 app.get('/:id/new',(req,res)=>{

@@ -6,6 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <ul></ul>
+    <ul>
+      <% for(let i =0 ; i<tweets.length;i++){ %>
+      <li>
+        <b><%= tweets[i].body  %>- </b><a href="/<%= tweets[i].user._id %>"><%= tweets[i].user.name %></a></li>
+
+      <% } %>
+    </ul>
   </body>
 </html>

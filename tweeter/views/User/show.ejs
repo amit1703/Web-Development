@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Account info</title>
   </head>
   <body>
-    <h1>account info</h1>
-    <br />
-    <%= user.name %>
-    <br />
-    <%= user.age %>
+    <div class="">
+      <h1>Account info</h1>
+      <b>name: </b> <%= user.name %>
+      <br />
+      <b>age: </b> <%= user.age %>
+    </div>
 
     <a href="/<%= user._id %>/new">new tweet!</a>
   </body>
