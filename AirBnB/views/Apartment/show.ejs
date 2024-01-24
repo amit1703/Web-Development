@@ -1,35 +1,65 @@
 <% layout('layouts/boilerplate') %>
-<div class="container">
-  <div class="justify-content-center card mt-10">
-    <img
-      class="card-img-top"
-      src=" <%= apartment.image %>"
-      alt="Card image cap"
-    />
-    <div class="card-body">
-      <h5 class="card-title"><%= apartment.title %></h5>
-      <p class="card-text"><%= apartment.description %></p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><%= apartment.price %>$ per night</li>
-      <li class="list-group-item"><%= apartment.location %></li>
-    </ul>
-    <div class="row card-body">
-      <div class="d-flex justify-content-center">
-        <form
-          action="/apartments/<%= apartment._id %>?_method=DELETE"
-          method="POST"
-        >
-          <button class="btn btn color-primary bg-secondary text-white mx-2">
-            delete
-          </button>
-        </form>
+<div class="container text-center">
+  <div class="row">
+    <div class="card col-8">
+      <img
+        class="card-img-top"
+        src=" <%= apartment.image %>"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title"><%= apartment.title %></h5>
+        <p class="card-text"><%= apartment.description %></p>
       </div>
-      <a
-        href="/apartments/<%= apartment._id %>/edit"
-        class="btn btn color-primary bg-secondary text-white mx-2 mt-3"
-        >Edit</a
-      >
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= apartment.price %>$ per night</li>
+        <li class="list-group-item"><%= apartment.location %></li>
+      </ul>
+      <div class="row card-body">
+        <div class="d-flex justify-content-center">
+          <form
+            action="/apartments/<%= apartment._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn color-primary bg-secondary text-white mx-2">
+              delete
+            </button>
+          </form>
+        </div>
+        <a
+          href="/apartments/<%= apartment._id %>/edit"
+          class="btn btn color-primary bg-secondary text-white mx-2 mt-3"
+          >Edit</a
+        >
+      </div>
+    </div>
+    <div class="mb-3 col-4">
+      <h2>Leave a Review</h2>
+      <form action="/apartments/<%= apartment._id %>/reviews" method="post">
+        <div class="mb-3">
+          <label for="customRange1" class="form-label">Rating</label>
+          <input
+            type="range"
+            class="form-range"
+            id="customRange1"
+            min="1"
+            max="5"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Review</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            required
+          ></textarea>
+          <button>Submit</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

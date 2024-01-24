@@ -4,6 +4,8 @@ const path = require('path')
 const mongoose = require('mongoose')//db
 const Apartment = require('./models/Apartment')
 const ejsMate = require('ejs-mate')
+const Review = require('./models/Review')
+
 const AppError = require('./AppError')
 const joi  = require('joi')// serverside errors (not in use rn...)
 
@@ -102,6 +104,23 @@ app.get('/apartments/:id/edit', async(req,res,next)=>{
 }
 })
 
+app.post('/apartments/:id/reviews',  async(req,res,next)=>{
+    //relate to new review
+    try{
+        const apartment = await Apartment.findById(req.params.id);
+        const review = await new Review(req.body);
+        apartment.reviews.push(review)
+        await review.save()
+        await apartment.save()
+        res.redirect('/apartments')
+        console.log(review.rating)
+    }
+
+    catch(e){
+        // if there is an error with adding a new apartment ,the middlware app.use(err) will run
+        return next(e)
+    }
+    })
 app.put('/apartments/:id', async(req,res,next)=>{
 try{
       const {id} = req.params;
