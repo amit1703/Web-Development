@@ -110,3 +110,21 @@ app.post('/apartments/:id', async (req,res)=>{
 app.listen(3000, ()=>{
     console.log('on port 3000')
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
