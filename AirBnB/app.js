@@ -78,14 +78,13 @@ app.post('/apartments',  async(req,res,next)=>{
 
 app.get('/apartments/:id', async (req,res,next)=>{
     try{
-
-    
     const { id } = req.params;
+    const reviews = await Apartment.findById(id).populate('reviews')
     const apartment = await Apartment.findById(id)
     if(!apartment){
        return next(new AppError('Apartment not found', 404))// w/o the return the next line will run and then we will get ejs error because there is no such an apramtment with this id
     }
-    res.render('Apartment/show' ,{apartment})
+    res.render('Apartment/show' ,{apartment, reviews})
 }
 catch(e){
     next(e)
@@ -112,8 +111,8 @@ app.post('/apartments/:id/reviews',  async(req,res,next)=>{
         apartment.reviews.push(review)
         await review.save()
         await apartment.save()
-        res.redirect('/apartments')
-        console.log(review.rating)
+        res.redirect(`/apartments/${req.params.id}`)
+        console.log(review.rating) 
     }
 
     catch(e){
