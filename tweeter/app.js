@@ -47,11 +47,27 @@ app.post('/tweets', async (req,res)=>{
     res.redirect('/tweets')
 
 })
+app.get('/userlist',async(req,res)=>{
+
+    const users = await User.find({})
+    res.render('User/list',{users})
+
+
+})
 app.get('/:id' , async(req,res)=>{
     const {id} = req.params
     const user = await User.findById(id)
-    console.log(user)
-    res.render('User/show' ,{user} )
+    const tweets = await Tweet.find({}).populate('user')
+    const final =[]
+
+    for(let i = 0  ; i<tweets.length; i++){
+        if(tweets[i].user._id == id)
+        final.push(tweets[i])
+    console.log(final)
+
+    }
+    console.log(final)
+    res.render('User/show' ,{user, final} )
 })
 
 app.get('/:id/new',(req,res)=>{
