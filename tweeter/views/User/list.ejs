@@ -1,0 +1,11 @@
+<% layout('layouts/boilerplate') %>
+
+    <h1>Users!</h1>
+    <ul>
+        <% for(let i =0 ; i<users.length;i++){ %>
+        <li>
+          <b><a href="/<%=users[i]._id %>"><%= users[i].name %></a>- </b><%= users[i].age  %> years old</li>
+  
+        <% } %>
+      </ul>
+

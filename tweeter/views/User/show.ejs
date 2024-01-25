@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="">
+      <h1>Account info</h1>
+      <b>name: </b> <%= user.name %>
+      <br />
+      <b>age: </b> <%= user.age %>
+    </div>
+
+    <div class="">
+      <h4>Commmets:</h4>
+      <ul>
+        <%  for(let i =0 ; i<final.length;i++) { %>
+            <li><b><%= final[i].body %>- </b><%= final[i].like %> likes</li>
+      <% } %>  
+      </ul>
+    </div>
+
+    <a href="/<%= user._id %>/new">new tweet!</a>
+    <a href="/tweets">back to main</a>
+

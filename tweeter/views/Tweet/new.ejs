@@ -1,0 +1,10 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>new Tweet</h1>
+<form action="/<%= id %>" method="post">
+  <label for="text">text:</label>
+  <textarea name="text" id="text" cols="30" rows="3"></textarea>
+  <label for="like">likes</label>
+  <input type="number" name="like" id="like" />
+  <button>Submit</button>
+</form>
