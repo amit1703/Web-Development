@@ -134,7 +134,20 @@ try{
     next(e)
 }
 })
+app.delete('/apartments/:id/reviews/:idreview', async(req,res)=>{
+    const review = await Review.findById(req.params.idreview)
+    const user = await User.findById(req.params.id).populate('reviews')
+    for(let review1 of user.reviews){
+        const index = reviews.indexOf(review1);
+        if(review.name === review1.name)
+            reviews.splice(index, 1)
 
+    }
+    await user.save()
+    await review.save()
+    res.redirect(`/apartments/${req.params.id}`)
+
+})
 app.delete('/apartments/:id', async(req,res,next)=>{
 try
 {
