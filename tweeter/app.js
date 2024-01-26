@@ -63,10 +63,8 @@ app.get('/:id' , async(req,res)=>{
     for(let i = 0  ; i<tweets.length; i++){
         if(tweets[i].user._id == id)
         final.push(tweets[i])
-    console.log(final)
 
     }
-    console.log(final)
     res.render('User/show' ,{user, final} )
 })
 
