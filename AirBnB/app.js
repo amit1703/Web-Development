@@ -106,13 +106,17 @@ app.get('/apartments/:id/edit', async(req,res,next)=>{
 app.post('/apartments/:id/reviews',  async(req,res,next)=>{
     //relate to new review
     try{
+        const text = req.body.text;
+        const rating = req.body.rating;
         const apartment = await Apartment.findById(req.params.id);
-        const review = await new Review(req.body);
+        const review = await new Review({
+            text:text,
+            rating:rating
+        });
         apartment.reviews.push(review)
         await review.save()
         await apartment.save()
         res.redirect(`/apartments/${req.params.id}`)
-        console.log(review.rating) 
     }
 
     catch(e){

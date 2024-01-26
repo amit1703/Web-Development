@@ -1,65 +1,80 @@
-<% layout('layouts/boilerplate') %>
-<div class="container text-center">
-  <div class="row">
-    <div class="card col-8">
-      <img
-        class="card-img-top"
-        src=" <%= apartment.image %>"
-        alt="Card image cap"
-      />
+<% layout('layouts/boilerplate')%>
+
+<div class="row">
+  <div class="col-8">
+    <div class="card mb-3">
+      <img src="<%= apartment.image%>" class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title"><%= apartment.title %></h5>
-        <p class="card-text"><%= apartment.description %></p>
+        <h5 class="card-title"><%= apartment.title%></h5>
+        <p class="card-text"><%= apartment.description%></p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= apartment.price %>$ per night</li>
-        <li class="list-group-item"><%= apartment.location %></li>
+        <li class="list-group-item text-muted"><%= apartment.location%></li>
+        <li class="list-group-item">$<%= apartment.price%>/night</li>
       </ul>
-      <div class="row card-body">
-        <div class="d-flex justify-content-center">
-          <form
-            action="/apartments/<%= apartment._id %>?_method=DELETE"
-            method="POST"
-          >
-            <button class="btn btn color-primary bg-secondary text-white mx-2">
-              delete
-            </button>
-          </form>
-        </div>
+      <div class="card-body">
         <a
-          href="/apartments/<%= apartment._id %>/edit"
-          class="btn btn color-primary bg-secondary text-white mx-2 mt-3"
+          class="card-link btn btn-info"
+          href="/apartments/<%=apartment._id%>/edit"
           >Edit</a
         >
+        <form
+          class="d-inline"
+          action="/apartments/<%=apartment._id%>?_method=DELETE"
+          method="POST"
+        >
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+      <div class="card-footer text-muted">2 days ago</div>
+    </div>
+  </div>
+  <div class="col-4">
+    <h2>Leave a Review</h2>
+    <form
+      action="/apartments/<%=apartment._id%>/reviews"
+      method="POST"
+      class="mb-3 validated-form"
+      novalidate
+    >
+      <div class="mb-3">
+        <label class="form-label" for="rating">Rating</label>
+        <input
+          class="form-range"
+          type="range"
+          min="1"
+          max="5"
+          name="rating"
+          id="rating"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="text">Review</label>
+        <textarea
+          class="form-control"
+          name="text"
+          id="text"
+          cols="30"
+          rows="3"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <button class="btn btn-success">Submit</button>
+    </form>
+    <% for(let i =0 ; i<reviews.reviews.length;i++) { %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Rating: <%= reviews.reviews[i].rating %></h5>
+        <p class="card-text">Review: <%= reviews.reviews[i].text %></p>
+        <form
+          action="/apartments/<%=apartment._id%>/reviews/<%=reviews.reviews[i]._id%>?_method=DELETE"
+          method="POST"
+        >
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </form>
       </div>
     </div>
-    <div class="mb-3 col-4">
-      <h2>Leave a Review</h2>
-      <form action="/apartments/<%= apartment._id %>/reviews" method="post">
-        <div class="mb-3">
-          <label for="customRange1" class="form-label">Rating</label>
-          <input
-            type="range"
-            class="form-range"
-            id="customRange1"
-            min="1"
-            max="5"
-            required
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label"
-            >Review</label
-          >
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            required
-          ></textarea>
-          <button>Submit</button>
-        </div>
-      </form>
-    </div>
+    <% } %>
   </div>
 </div>
