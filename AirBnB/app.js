@@ -136,14 +136,14 @@ try{
 })
 app.delete('/apartments/:id/reviews/:idreview', async(req,res)=>{
     const review = await Review.findById(req.params.idreview)
-    const user = await User.findById(req.params.id).populate('reviews')
+    const apartment = await Apartment.findById(req.params.id).populate('reviews')
     for(let review1 of user.reviews){
         const index = reviews.indexOf(review1);
-        if(review.name === review1.name)
+        if(review._id === review1._id)
             reviews.splice(index, 1)
 
     }
-    await user.save()
+    await apartment.save()
     await review.save()
     res.redirect(`/apartments/${req.params.id}`)
 
