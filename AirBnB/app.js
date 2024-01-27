@@ -37,11 +37,6 @@ const seesionconfig = {
 app.use(session(seesionconfig))
 
 
-
-
-
-// up to here, is a must 
-
 mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
@@ -50,6 +45,11 @@ mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
         console.log("OH NO MONGO CONNECTION ERROR!!!!")
         console.log(err)
     })
+
+
+// up to here, is a must 
+
+
 
 app.get('/' , (req,res)=>{
 
