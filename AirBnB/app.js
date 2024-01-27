@@ -57,7 +57,7 @@ app.get('/' , (req,res)=>{
 })
 
 app.use('/apartments', apartments)
-app.use('/apartments/:id', reviews)
+app.use('/apartments/:id/reviews', reviews)
 
 app.all('*', (req,res,next)=>{
 

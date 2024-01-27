@@ -1,12 +1,12 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 const Apartment = require('../models/Apartment')
 const Review = require('../models/Review')
 
 
 
 
-router.post('/apartments/:id/reviews',  async(req,res,next)=>{
+router.post('/',  async(req,res,next)=>{
     //relate to new review
     try{
         const text = req.body.text;
@@ -28,18 +28,11 @@ router.post('/apartments/:id/reviews',  async(req,res,next)=>{
     }
     })
 
-router.delete('/apartments/:id/reviews/:idreview', async(req,res)=>{
-    const review = await Review.findById(req.params.idreview)
-    const apartment = await Apartment.findById(req.params.id).populate('reviews')
-    for(let review1 of user.reviews){
-        const index = reviews.indexOf(review1);
-        if(review._id === review1._id)
-            reviews.splice(index, 1)
-
-    }
-    await apartment.save()
-    await review.save()
-    res.redirect(`/apartments/${req.params.id}`)
+router.delete('/:idreview', async(req,res)=>{
+    const { id, idreview } = req.params;
+    await Apartment.findByIdAndUpdate(id, { $pull: { reviews: idreview } });
+    await Review.findByIdAndDelete(idreview);
+    res.redirect(`/apartments/${id}`);
 
 })
 
