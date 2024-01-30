@@ -24,6 +24,19 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname,'public')))
 app.use(methodOverride('_method'))
 
+
+mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
+    .then(() => {
+        console.log("MONGO CONNECTION OPEN!!!")
+    })
+    .catch(err => {
+        console.log("OH NO MONGO CONNECTION ERROR!!!!")
+        console.log(err)
+    })
+
+
+
+
 const seesionconfig = {
     secret: 'notsomuchsecret',
     resave: false,
@@ -36,15 +49,6 @@ const seesionconfig = {
 }
 app.use(session(seesionconfig))
 
-
-mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
-    .then(() => {
-        console.log("MONGO CONNECTION OPEN!!!")
-    })
-    .catch(err => {
-        console.log("OH NO MONGO CONNECTION ERROR!!!!")
-        console.log(err)
-    })
 
 
 // up to here, is a must 
