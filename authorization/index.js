@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const session = require('express-session')
 const User = require('./models/user');
 
-mongoose.connect('mongodb://localhost:27017/AuthDemo', {})//connection to mongoDB
+mongoose.connect('mongodb://0.0.0.0:27017/AuthDemo', {})//connection to mongoDB
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })

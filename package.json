@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/amit1703/Web-Development/issues"
   },
-  "homepage": "https://github.com/amit1703/Web-Development#readme"
+  "homepage": "https://github.com/amit1703/Web-Development#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1"
+  }
 }
