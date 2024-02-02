@@ -4,7 +4,6 @@ const app = express();
 const bcrypt = require('bcrypt');
 const session = require('express-session')
 const User = require('./models/user');
-const user = require('./models/user');
 
 mongoose.connect('mongodb://localhost:27017/AuthDemo', {})//connection to mongoDB
     .then(() => {
@@ -27,14 +26,14 @@ app.use(session({
 }));
 
 const requireLogin = (req, res, next) => {
-    if (!req.session.user_id) {
+    if (!req.session.user) {
         return res.redirect('/login')
     }
         next();
     }
 
 
-app.get('/',requireLogin, (req,res)=>{
+app.get('/',requireLogin,  (req,res)=>{
     res.send('home page')
 })
 
@@ -42,21 +41,20 @@ app.get('/login',(req,res, next)=>{
     res.render('login')
 })
 app.post('/login',async(req,res,next)=>{
-    try{
     //login post
     const {username, password} = req.body
     const user = await User.findOne({username: username})
-    if(bcrypt.compare(password, user.hpassword) && user)
-    {
-        req.session.user = user; // Storing user in session
-        res.redirect('/')
+    if(user){
+        if(bcrypt.compare(password, user.hpassword)){
+            req.session.user = user; // Storing user in session
+            res.redirect('/')
+        }  
     }
+
     else{
         res.send('check your credentials')
-    }}
-    catch(e){
-        next(e)
     }
+    
 })
 
 app.get('/register', (req,res,next)=>{
