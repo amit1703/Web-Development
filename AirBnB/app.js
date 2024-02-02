@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use(methodOverride('_method'))
 
 
-mongoose.connect('mongodb://localhost:27017/AirBnB', {})//connection to mongoDB
+mongoose.connect('mongodb://0.0.0.0:27017/AirBnB', {})//connection to mongoDB
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
