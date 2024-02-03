@@ -37,7 +37,7 @@ mongoose.connect('mongodb://0.0.0.0:27017/AirBnB', {})//connection to mongoDB
 
 
 
-const seesionconfig = {
+const sessionconfig = {
     secret: 'notsomuchsecret',
     resave: false,
     saveUninitialized: true,
@@ -47,7 +47,7 @@ const seesionconfig = {
         maxAge :  1000*60*60*60*24*7
     }
 }
-app.use(session(seesionconfig))
+app.use(session(sessionconfig))
 
 
 
