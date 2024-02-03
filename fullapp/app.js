@@ -65,17 +65,7 @@ mongoose.connect('mongodb://0.0.0.0:27017/fullApp', {}).then(() => {
     })
 
 
-// middleware for if user connected
-const loginreq = async(req,res,next) =>{
-    if(!req.session.user){
-        res.redirect('/login')
-    }
-    else{
-        //next will run the next chunk of code , we put this middlware before the route , and then the code in the route section will run
-        next()
-    }
 
-}
 
 
 app.get('/',loginreq,(req,res,next)=>{
