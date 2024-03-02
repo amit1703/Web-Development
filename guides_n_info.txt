@@ -14,3 +14,6 @@ https://www.youtube.com/watch?v=-42K44A1oMA
 
 -Full Stack MERN Todo App with MongoDB, React, Express, Node | Responsive + Deployment + Full Notes
 https://www.youtube.com/watch?v=giXuiotopO0
+
+-MERN Stack Full Tutorial & Project | Complete All-in-One Course | 8 Hours
+https://www.youtube.com/watch?v=CvCiNeLnZ00
